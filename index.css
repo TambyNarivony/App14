@@ -1,11 +1,9 @@
-* {margin: 0;}
-
 .container {
   display: flex;
   justify-content: center;
   align-items: center;
   gap: 10px;
-  flex-wrap: wrap; /* permet aux boutons de descendre sur petit écran */
+  flex-wrap: wrap;
   padding: 10px;
 }
 
@@ -13,9 +11,10 @@ button {
   min-width: 80px;
   min-height: 40px;
   transition: all 0.3s ease;
+  flex: 1 1 auto; /* permet au bouton de croître/retrécir */
 }
 
-/* Media query pour écrans très petits */
+/* Media query pour mobile */
 @media (max-width: 400px) {
   .container {
     flex-direction: column;
@@ -24,7 +23,7 @@ button {
 
   button {
     width: 80%;
-    font-size: 5vw;
-    padding: 3vw 0;
+    font-size: 1.2em;
+    padding: 0.8em 0;
   }
 }
