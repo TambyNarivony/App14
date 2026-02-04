@@ -1,18 +1,30 @@
 * {margin: 0;}
 
-#ensemble {
-    background-color: red;
-    width: 50%;
-    height: 200px;
-    text-align: center;
-    
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  flex-wrap: wrap; /* permet aux boutons de descendre sur petit écran */
+  padding: 10px;
 }
 
-
-
 button {
-    margin: 50px auto;
-  font-size: 18px;
-  padding: 12px 24px;
-  transition: all 0.3s ease; /* animation fluide */
+  min-width: 80px;
+  min-height: 40px;
+  transition: all 0.3s ease;
+}
+
+/* Media query pour écrans très petits */
+@media (max-width: 400px) {
+  .container {
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  button {
+    width: 80%;
+    font-size: 5vw;
+    padding: 3vw 0;
+  }
 }
