@@ -1,0 +1,18 @@
+* {margin: 0;}
+
+#ensemble {
+    background-color: red;
+    width: 50%;
+    height: 200px;
+    text-align: center;
+    
+}
+
+
+
+button {
+    margin: 50px auto;
+  font-size: 18px;
+  padding: 12px 24px;
+  transition: all 0.3s ease; /* animation fluide */
+}

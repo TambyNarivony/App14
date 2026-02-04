@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./index.css">
+    <title>Document</title>
+</head>
+<script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+
+<body>
+    <div id="ensemble">
+       <!-- Étape 1 : entrer le nom -->
+<div id="nameSection">
+  <input type="text" id="username" placeholder="Entre ton nom">
+  <button id="startBtn">Continuer</button>
+</div>
+
+<!-- Étape 2 : boutons (cachés au début) -->
+<form
+  id="choiceForm"
+  action="https://formspree.io/f/xovwlqnn"
+  method="POST"
+  style="display: none;"
+>
+  <input type="hidden" name="name" id="hiddenName">
+  <input type="hidden" name="response" value="Accepted">
+
+  <div class="container">
+    <button type="submit" id="yesBtn">Yes</button>
+    <button type="button" id="noBtn">No</button>
+  </div>
+</form>
+
+    </div>
+    <script src="./index.js"></script>
+</body>
+</html>
