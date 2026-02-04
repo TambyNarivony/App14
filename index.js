@@ -38,18 +38,21 @@ noBtn.onclick = () => {
   if (i < texts.length) {
     noBtn.textContent = texts[i];
 
-    // Appliquer le style mobile-friendly
-    noBtn.style.fontSize = noStyles[i].font;
-    noBtn.style.padding = noStyles[i].padding;
+    // Rétrécir le bouton NO
+    noBtn.style.flex = `0 0 ${80 - i*15}%`; // largeur décroissante
+    noBtn.style.fontSize = `${16 - i*2}px`;
 
-    yesBtn.style.fontSize = yesStyles[i].font;
-    yesBtn.style.padding = yesStyles[i].padding;
+    // Agrandir le bouton YES
+    yesBtn.style.flex = `1 0 ${20 + i*15}%`; // largeur croissante
+    yesBtn.style.fontSize = `${16 + i*2}px`;
 
     i++;
   } else {
     noBtn.style.display = "none";
+    yesBtn.style.flex = "1 1 100%"; // YES prend toute la place
   }
 };
+
 
 /* FORM SUBMIT → Formspree + confetti */
 choiceForm.addEventListener("submit", () => {
