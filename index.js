@@ -14,20 +14,37 @@ startBtn.onclick = () => {
 
   hiddenName.value = name;
   nameSection.style.display = "none";
-  choiceForm.style.display = "block";
+  choiceForm.style.display = "flex"; // Flex pour responsive mobile
 };
 
-/* Logique bouton NO */
+/* Logique bouton NO avec font-size et padding dynamiques */
 let i = 0;
 const texts = ["Are you sure?", "Are you really sure?", "Really"];
-const noSizes = [0.9, 0.75, 0.6];
-const yesSizes = [1.2, 1.4, 1.6];
+
+// Nouvelle approche pour mobile : font-size et padding en unités relatives
+const noStyles = [
+  { font: "4vw", padding: "2vw 5vw" },
+  { font: "3.5vw", padding: "1.5vw 4vw" },
+  { font: "3vw", padding: "1vw 3vw" }
+];
+
+const yesStyles = [
+  { font: "4vw", padding: "2vw 5vw" },
+  { font: "4.5vw", padding: "2.5vw 6vw" },
+  { font: "5vw", padding: "3vw 7vw" }
+];
 
 noBtn.onclick = () => {
   if (i < texts.length) {
     noBtn.textContent = texts[i];
-    noBtn.style.transform = `scale(${noSizes[i]})`;
-    yesBtn.style.transform = `scale(${yesSizes[i]})`;
+
+    // Appliquer le style mobile-friendly
+    noBtn.style.fontSize = noStyles[i].font;
+    noBtn.style.padding = noStyles[i].padding;
+
+    yesBtn.style.fontSize = yesStyles[i].font;
+    yesBtn.style.padding = yesStyles[i].padding;
+
     i++;
   } else {
     noBtn.style.display = "none";
